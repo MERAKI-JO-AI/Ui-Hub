@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlogNews-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="BlogNews" class="logo-img" />
+          </a>
+          <nav class="main-nav">
+            <a href="#featured">Featured</a>
+            <a href="#posts">Posts</a>
+            <a href="#newsletter">Newsletter</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="search-bar" data-tip="search-bar">
+        <div class="container">
+          <div class="search-wrapper">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search articles..."
+              aria-label="Search articles"
+            />
+            <button class="search-btn" aria-label="Search">🔍</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured" class="section featured" data-tip="featured">
+        <div class="container">
+          <article class="featured-card">
+            <div class="featured-image">
+              <div class="featured-badge" data-tip="featured-badge">
+                Featured
+              </div>
+              <img
+                src="assets/cover-1.jpg"
+                alt="Featured article"
+                class="post-thumb"
+                data-tip="post-thumb"
+              />
+            </div>
+            <div class="featured-content">
+              <div class="post-meta">
+                <span class="post-date">March 15, 2024</span>
+                <span class="post-category">Web Development</span>
+              </div>
+              <h1 class="featured-title">
+                Building Modern Web Applications with React
+              </h1>
+              <p class="featured-excerpt">
+                Learn how to build scalable, maintainable web applications using
+                React and modern JavaScript patterns. This comprehensive guide
+                covers everything from setup to deployment.
+              </p>
+              <a href="post.html" class="btn btn-primary">Read Article</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="posts" class="section post-list" data-tip="post-list">
+        <div class="container">
+          <div class="taxonomies" data-tip="taxonomies">
+            <button
+              class="tag-pill active"
+              data-tip="tag-pill"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button class="tag-pill" data-tip="tag-pill" data-filter="web">
+              Web Dev
+            </button>
+            <button class="tag-pill" data-tip="tag-pill" data-filter="design">
+              Design
+            </button>
+            <button class="tag-pill" data-tip="tag-pill" data-filter="tutorial">
+              Tutorial
+            </button>
+          </div>
+
+          <div class="posts-grid">
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="web"
+              data-title="React Hooks Guide"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-2.jpg" alt="React Hooks Guide" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">March 10, 2024</span>
+                  <span class="post-category">Web Development</span>
+                </div>
+                <h2 class="post-title">
+                  Mastering React Hooks: A Complete Guide
+                </h2>
+                <p class="post-excerpt">
+                  Dive deep into React Hooks and learn how to write cleaner,
+                  more efficient React components using useState, useEffect, and
+                  custom hooks.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="design"
+              data-title="CSS Grid Layout"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-3.jpg" alt="CSS Grid Layout" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">March 5, 2024</span>
+                  <span class="post-category">Design</span>
+                </div>
+                <h2 class="post-title">
+                  CSS Grid Layout: Modern Layout Techniques
+                </h2>
+                <p class="post-excerpt">
+                  Explore the power of CSS Grid and learn how to create complex,
+                  responsive layouts with ease. Includes practical examples and
+                  best practices.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="tutorial"
+              data-title="JavaScript Fundamentals"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-1.jpg" alt="JavaScript Fundamentals" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">February 28, 2024</span>
+                  <span class="post-category">Tutorial</span>
+                </div>
+                <h2 class="post-title">
+                  JavaScript Fundamentals: Variables and Functions
+                </h2>
+                <p class="post-excerpt">
+                  A beginner-friendly guide to JavaScript basics, covering
+                  variables, functions, and essential programming concepts with
+                  clear examples.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="web"
+              data-title="TypeScript Basics"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-2.jpg" alt="TypeScript Basics" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">February 20, 2024</span>
+                  <span class="post-category">Web Development</span>
+                </div>
+                <h2 class="post-title">Getting Started with TypeScript</h2>
+                <p class="post-excerpt">
+                  Learn how TypeScript enhances JavaScript with static typing,
+                  making your code more robust and maintainable. Perfect for
+                  beginners.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="design"
+              data-title="UI Design Principles"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-3.jpg" alt="UI Design Principles" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">February 15, 2024</span>
+                  <span class="post-category">Design</span>
+                </div>
+                <h2 class="post-title">
+                  Essential UI Design Principles for Developers
+                </h2>
+                <p class="post-excerpt">
+                  Discover key UI design principles that every developer should
+                  know. Learn how to create interfaces that are both beautiful
+                  and functional.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tip="post-card"
+              data-category="tutorial"
+              data-title="Node.js Tutorial"
+            >
+              <div class="post-thumb" data-tip="post-thumb">
+                <img src="assets/cover-1.jpg" alt="Node.js Tutorial" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-date">February 10, 2024</span>
+                  <span class="post-category">Tutorial</span>
+                </div>
+                <h2 class="post-title">Building REST APIs with Node.js</h2>
+                <p class="post-excerpt">
+                  Step-by-step tutorial on building RESTful APIs using Node.js
+                  and Express. Includes authentication, error handling, and best
+                  practices.
+                </p>
+                <a href="post.html" class="post-link">Read More →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="newsletter" class="section newsletter" data-tip="newsletter">
+        <div class="container">
+          <h2>Stay Updated</h2>
+          <p class="newsletter-desc">
+            Get the latest articles delivered to your inbox.
+          </p>
+          <form
+            class="newsletter-form"
+            id="newsletter-form"
+            data-tip="newsletter-form"
+          >
+            <div class="form-group">
+              <label for="newsletter-email" class="sr-only"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                aria-required="true"
+              />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p class="newsletter-note">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> BlogHub. All rights
+            reserved.
+          </p>
+          <nav class="footer-nav" data-tip="footer-nav">
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

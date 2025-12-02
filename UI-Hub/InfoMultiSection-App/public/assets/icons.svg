@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-copy" viewBox="0 0 24 24">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path fill="none" stroke="currentColor" stroke-width="2" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-anchor" viewBox="0 0 24 24">
+    <circle cx="12" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="12" y1="8" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-theme" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+  </symbol>
+</svg>
+

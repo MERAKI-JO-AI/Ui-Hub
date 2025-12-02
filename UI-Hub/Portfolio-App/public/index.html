@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">Portfolio</a>
+          <nav class="main-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero" data-tip="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Building Digital Experiences</h1>
+            <p class="hero-subtitle">
+              I create clean, accessible web applications that users love.
+            </p>
+            <a href="#projects" class="btn btn-primary" data-tip="primary-cta"
+              >See My Projects</a
+            >
+          </div>
+          <div class="hero-visual">
+            <img src="assets/cover.svg" alt="Cover image" class="cover-image" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about" data-tip="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-image">
+              <img
+                src="assets/avatar.svg"
+                alt="Profile"
+                class="avatar"
+                data-tip="avatar"
+              />
+            </div>
+            <div class="about-text">
+              <h2>About Me</h2>
+              <p class="bio" data-tip="bio">
+                I'm a frontend developer passionate about creating intuitive
+                interfaces and accessible web experiences. I specialize in
+                building responsive applications with clean code and modern
+                design principles.
+              </p>
+              <ul class="value-bullets">
+                <li>5+ years of web development experience</li>
+                <li>Focus on accessibility and user experience</li>
+                <li>Strong collaboration and communication skills</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects" data-tip="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="filter-row" data-tip="filters">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="frontend">Frontend</button>
+            <button class="filter-chip" data-filter="fullstack">
+              Full Stack
+            </button>
+          </div>
+          <div class="projects-grid">
+            <article
+              class="card project-card"
+              data-category="frontend"
+              data-tip="project-card"
+            >
+              <h3>E-Commerce Dashboard</h3>
+              <p>
+                Modern admin interface with real-time analytics and inventory
+                management.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+            <article
+              class="card project-card"
+              data-category="fullstack"
+              data-tip="project-card"
+            >
+              <h3>Task Management App</h3>
+              <p>
+                Full-stack application with user authentication and
+                collaborative features.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+            <article
+              class="card project-card"
+              data-category="frontend"
+              data-tip="project-card"
+            >
+              <h3>Weather Widget</h3>
+              <p>
+                Beautiful weather display with location-based forecasts and
+                interactive maps.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+            <article
+              class="card project-card"
+              data-category="fullstack"
+              data-tip="project-card"
+            >
+              <h3>Social Media Platform</h3>
+              <p>
+                Complete social network with posts, comments, and real-time
+                notifications.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+            <article
+              class="card project-card"
+              data-category="frontend"
+              data-tip="project-card"
+            >
+              <h3>Portfolio Website</h3>
+              <p>
+                Responsive portfolio site with smooth animations and dark mode
+                support.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+            <article
+              class="card project-card"
+              data-category="fullstack"
+              data-tip="project-card"
+            >
+              <h3>Blog Platform</h3>
+              <p>
+                Content management system with markdown support and SEO
+                optimization.
+              </p>
+              <div class="card-actions" data-tip="card-cta">
+                <a href="#" class="btn-link">Live Demo</a>
+                <a href="#" class="btn-link">Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills" data-tip="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group" data-tip="skills-frontend">
+              <h3>Frontend</h3>
+              <div class="skill-badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+              </div>
+            </div>
+            <div class="skill-group" data-tip="skills-backend">
+              <h3>Backend</h3>
+              <div class="skill-badges">
+                <span class="badge">Node.js</span>
+                <span class="badge">Express</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">MongoDB</span>
+                <span class="badge">REST APIs</span>
+              </div>
+            </div>
+            <div class="skill-group" data-tip="skills-tools">
+              <h3>Tools</h3>
+              <div class="skill-badges">
+                <span class="badge">Git</span>
+                <span class="badge">Vercel</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Figma</span>
+                <span class="badge">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="testimonials"
+        class="section testimonials"
+        data-tip="testimonials"
+      >
+        <div class="container">
+          <h2>Testimonials</h2>
+          <div class="testimonials-grid">
+            <blockquote class="card quote-card" data-tip="quote">
+              <p>
+                "Exceptional attention to detail and clean code. Delivered
+                exactly what we needed on time."
+              </p>
+              <footer>
+                <cite>Sarah Johnson</cite>
+                <span class="role">Product Manager</span>
+              </footer>
+            </blockquote>
+            <blockquote class="card quote-card" data-tip="quote">
+              <p>
+                "Great collaboration skills and deep understanding of user
+                experience principles."
+              </p>
+              <footer>
+                <cite>Michael Chen</cite>
+                <span class="role">Design Lead</span>
+              </footer>
+            </blockquote>
+            <blockquote class="card quote-card" data-tip="quote">
+              <p>
+                "Reliable developer who consistently produces high-quality,
+                accessible solutions."
+              </p>
+              <footer>
+                <cite>Emily Rodriguez</cite>
+                <span class="role">Tech Director</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-cta" data-tip="contact-cta">
+        <div class="container">
+          <h2>Let's Work Together</h2>
+          <p>I'm always open to discussing new projects and opportunities.</p>
+          <a
+            href="mailto:hello@example.com"
+            class="btn btn-primary"
+            data-tip="contact-button"
+            >Get In Touch</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> Portfolio. All rights
+            reserved.
+          </p>
+          <nav class="social-nav" data-tip="social-row">
+            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

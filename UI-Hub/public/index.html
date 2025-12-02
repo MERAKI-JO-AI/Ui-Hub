@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeCoding UI Hub - Learn UI by Building</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <!-- Header -->
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">
+            <img
+              src="assets/logo.svg"
+              alt="VibeCoding UI Hub"
+              class="logo-img"
+            />
+            <span class="logo-text">VibeCoding UI Hub</span>
+          </a>
+          <nav class="main-nav">
+            <a href="#overview">Overview</a>
+            <a href="#why-ui">Why UI</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#projects-gallery">Projects</a>
+            <a href="#faqs">FAQ</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="section hero" data-tip="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Learn UI by Building 10 Real Mini-Apps</h1>
+            <p class="hero-subtitle">
+              Master user interface design through hands-on practice. Each app
+              includes interactive teaching overlays that explain every element
+              as you build.
+            </p>
+            <div class="hero-ctas">
+              <a
+                href="#curriculum"
+                class="btn btn-primary"
+                data-tip="primary-cta"
+                >Start Learning</a
+              >
+              <a
+                href="#projects-gallery"
+                class="btn btn-secondary"
+                data-tip="secondary-cta"
+                >See All Apps</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="assets/cover.jpg" alt="UI Design" class="hero-image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section id="overview" class="section overview" data-tip="overview">
+        <div class="container">
+          <h2 class="section-title">What is UI?</h2>
+          <div class="overview-content">
+            <div class="overview-text">
+              <p>
+                User Interface (UI) is everything users see and interact with on
+                a screen. It includes buttons, forms, navigation, cards, modals,
+                and all visual elements that make up a digital experience.
+              </p>
+              <p>
+                Great UI is clear, consistent, and accessible. It guides users
+                effortlessly toward their goals while maintaining visual
+                hierarchy and brand identity.
+              </p>
+              <p>
+                Through 10 hands-on projects, you'll build real
+                mini-applications and learn UI principles by doing. Each project
+                includes interactive teaching tips that explain design decisions
+                in context.
+              </p>
+            </div>
+            <div class="overview-figure" data-tip="figure">
+              <div class="figure-placeholder">
+                <svg
+                  width="400"
+                  height="300"
+                  viewBox="0 0 400 300"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="400"
+                    height="300"
+                    rx="16"
+                    fill="url(#gradient)"
+                  />
+                  <rect
+                    x="50"
+                    y="50"
+                    width="300"
+                    height="200"
+                    rx="8"
+                    fill="rgba(255,255,255,0.1)"
+                  />
+                  <circle
+                    cx="200"
+                    cy="150"
+                    r="40"
+                    fill="rgba(255,255,255,0.2)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0"
+                      y1="0"
+                      x2="400"
+                      y2="300"
+                    >
+                      <stop offset="0%" stop-color="hsl(267,84%,62%)" />
+                      <stop offset="100%" stop-color="hsl(210,90%,62%)" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why UI Matters -->
+      <section id="why-ui" class="section why-ui" data-tip="why-ui">
+        <div class="container">
+          <h2 class="section-title">Why UI Matters</h2>
+          <div class="value-cards">
+            <div class="value-card" data-tip="value-card">
+              <div class="value-icon">🎯</div>
+              <h3 class="value-title">Clarity</h3>
+              <p class="value-text">
+                Clear interfaces reduce cognitive load and help users complete
+                tasks faster. Good UI communicates purpose instantly.
+              </p>
+            </div>
+            <div class="value-card" data-tip="value-card">
+              <div class="value-icon">🤝</div>
+              <h3 class="value-title">Trust</h3>
+              <p class="value-text">
+                Professional, polished interfaces build credibility. Users trust
+                well-designed products more than rough prototypes.
+              </p>
+            </div>
+            <div class="value-card" data-tip="value-card">
+              <div class="value-icon">📈</div>
+              <h3 class="value-title">Conversion</h3>
+              <p class="value-text">
+                Thoughtful UI design directly impacts business metrics. Better
+                interfaces lead to higher engagement and conversions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curriculum -->
+      <section id="curriculum" class="section curriculum" data-tip="curriculum">
+        <div class="container">
+          <h2 class="section-title">How We'll Learn</h2>
+          <p class="section-intro">
+            Build 10 real mini-applications, each focusing on different UI
+            patterns and use cases. Every project includes interactive teaching
+            overlays that explain design decisions as you build.
+          </p>
+          <div class="curriculum-steps">
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3 class="step-title">Portfolio</h3>
+                <p class="step-desc">Personal branding and project showcase</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3 class="step-title">Landing Course</h3>
+                <p class="step-desc">Marketing page with value propositions</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3 class="step-title">Product Showcase</h3>
+                <p class="step-desc">E-commerce product presentation</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3 class="step-title">Bootcamp Event</h3>
+                <p class="step-desc">Event landing with agenda and speakers</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3 class="step-title">Lead / Contact</h3>
+                <p class="step-desc">Conversion-focused form design</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h3 class="step-title">UI Kit</h3>
+                <p class="step-desc">Design system components and tokens</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">7</div>
+              <div class="step-content">
+                <h3 class="step-title">Blog / News</h3>
+                <p class="step-desc">Editorial layout with reading progress</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">8</div>
+              <div class="step-content">
+                <h3 class="step-title">Link in Bio</h3>
+                <p class="step-desc">Campaign profile with link stack</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">9</div>
+              <div class="step-content">
+                <h3 class="step-title">Dashboard Mock</h3>
+                <p class="step-desc">Data visualization and admin interface</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">10</div>
+              <div class="step-content">
+                <h3 class="step-title">Info Pages</h3>
+                <p class="step-desc">Documentation-style multi-section page</p>
+              </div>
+            </div>
+          </div>
+          <div class="method-note" data-tip="method-note">
+            <p>
+              <strong>Interactive Teaching:</strong> Hover over any element with
+              a teaching tip to see quick context. Click or tap to open a modal
+              with deeper explanations of what, why, and how.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Gallery -->
+      <section
+        id="projects-gallery"
+        class="section projects-gallery"
+        data-tip="projects-gallery"
+      >
+        <div class="container">
+          <h2 class="section-title">All Projects</h2>
+          <div class="project-filters" data-tip="project-filters">
+            <div class="search-wrapper">
+              <input
+                type="search"
+                id="project-search"
+                placeholder="Search projects..."
+                aria-label="Search projects"
+              />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="search-icon"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+            <div class="tag-filters" id="tag-filters">
+              <!-- Tags will be populated by JS -->
+            </div>
+          </div>
+          <div class="projects-grid" id="projects-grid">
+            <!-- Project cards will be populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faqs" class="section faqs" data-tip="faqs">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need prior experience?</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="faq-icon"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Basic HTML, CSS, and JavaScript knowledge is helpful but not
+                  required. Each project includes detailed explanations and
+                  teaching tips that guide you through every element.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does each project take?</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="faq-icon"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Each project can be completed in 2-4 hours, depending on your
+                  pace. Focus on understanding the UI patterns rather than
+                  rushing through.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I customize the projects?</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="faq-icon"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! Feel free to modify colors, content, and layouts.
+                  Experimentation is encouraged and helps reinforce learning.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What if I get stuck?</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="faq-icon"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Each project includes interactive teaching tips. Hover over
+                  elements to see quick context, or click to open detailed
+                  explanations. The code is also well-commented.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need to install anything?</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="faq-icon"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  No frameworks or build tools required. Just open the HTML
+                  files in your browser. A local server is recommended for
+                  development but not mandatory.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            &copy; <span id="current-year">2024</span> VibeCoding UI Hub. All
+            rights reserved.
+          </p>
+          <nav class="footer-nav">
+            <a href="#overview">Overview</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#projects-gallery">Projects</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tip Modal -->
+    <div
+      id="tip-modal"
+      class="tip-modal"
+      role="dialog"
+      aria-labelledby="tip-modal-title"
+      aria-describedby="tip-modal-content"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">
+          <span>&times;</span>
+        </button>
+        <h2 id="tip-modal-title" class="modal-title"></h2>
+        <div id="tip-modal-content" class="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Tip Card -->
+    <div id="tip-card" class="tip-card" aria-hidden="true">
+      <div class="tip-card-content"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="tips.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

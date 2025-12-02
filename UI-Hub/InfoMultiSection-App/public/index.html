@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfoMultiSection-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <!-- Top Bar -->
+    <header class="topbar" data-tip="topbar">
+      <div class="topbar-container">
+        <a href="#" class="logo">
+          <img src="assets/logo.svg" alt="InfoPages" class="logo-img" />
+        </a>
+        <button
+          class="theme-toggle"
+          data-tip="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <use href="assets/icons.svg#icon-theme"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout-container">
+      <!-- Sidebar TOC -->
+      <aside class="sidebar-toc" data-tip="sidebar-toc">
+        <nav class="toc-nav">
+          <a href="#overview" class="toc-item" data-tip="toc-item">Overview</a>
+          <a href="#concepts" class="toc-item" data-tip="toc-item">Concepts</a>
+          <a href="#features" class="toc-item" data-tip="toc-item">Features</a>
+          <a href="#setup" class="toc-item" data-tip="toc-item">Setup</a>
+          <a href="#examples" class="toc-item" data-tip="toc-item">Examples</a>
+          <a href="#pricing" class="toc-item" data-tip="toc-item">Pricing</a>
+          <a href="#faq" class="toc-item" data-tip="toc-item">FAQ</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Overview Section -->
+        <section
+          id="overview"
+          class="section section-overview"
+          data-tip="section-overview"
+        >
+          <h1 class="section-title">
+            Getting Started
+            <a
+              href="#overview"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h1>
+          <div class="mini-toc" data-tip="mini-toc">
+            <h3>On this page</h3>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#concepts">Concepts</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#setup">Setup</a></li>
+            </ul>
+          </div>
+          <div class="content">
+            <p>
+              Welcome to our comprehensive documentation. This guide will help
+              you understand the core concepts, features, and how to get started
+              quickly.
+            </p>
+            <p>
+              Whether you're a beginner or an experienced developer, you'll find
+              everything you need to build amazing applications with our
+              platform.
+            </p>
+            <div class="callout" data-tip="callout">
+              <strong>Note:</strong> This is a callout box for important
+              information, tips, or warnings.
+            </div>
+          </div>
+        </section>
+
+        <!-- Concepts Section -->
+        <section
+          id="concepts"
+          class="section section-concepts"
+          data-tip="section-concepts"
+        >
+          <h2 class="section-title">
+            Core Concepts
+            <a
+              href="#concepts"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <p>
+              Understanding the fundamental concepts will help you make the most
+              of our platform. Let's explore the key ideas.
+            </p>
+            <figure class="figure" data-tip="figure">
+              <img src="assets/figure-1.jpg" alt="Concept diagram" />
+              <figcaption>Visual representation of core concepts</figcaption>
+            </figure>
+            <ol class="steps" data-tip="steps">
+              <li class="step-item" data-tip="step-item">
+                <strong>Step 1:</strong> Understand the basic architecture and
+                how components interact.
+              </li>
+              <li class="step-item" data-tip="step-item">
+                <strong>Step 2:</strong> Learn about the data flow and state
+                management patterns.
+              </li>
+              <li class="step-item" data-tip="step-item">
+                <strong>Step 3:</strong> Explore advanced features and
+                customization options.
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section
+          id="features"
+          class="section section-features"
+          data-tip="section-features"
+        >
+          <h2 class="section-title">
+            Key Features
+            <a
+              href="#features"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <div class="feature-tabs" data-tip="feature-tabs">
+              <button class="feature-tab active" data-tab="core">Core</button>
+              <button class="feature-tab" data-tab="advanced">Advanced</button>
+              <button class="feature-tab" data-tab="tools">Tools</button>
+            </div>
+            <div class="feature-content">
+              <div class="feature-panel active" data-panel="core">
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Fast Performance</h3>
+                  <p>
+                    Optimized for speed with minimal overhead and efficient
+                    resource usage.
+                  </p>
+                </div>
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Easy Integration</h3>
+                  <p>
+                    Simple API that works seamlessly with your existing stack.
+                  </p>
+                </div>
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Comprehensive Docs</h3>
+                  <p>
+                    Detailed documentation with examples and best practices.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-panel" data-panel="advanced">
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Custom Plugins</h3>
+                  <p>
+                    Extend functionality with custom plugins and extensions.
+                  </p>
+                </div>
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Advanced Configuration</h3>
+                  <p>Fine-tune every aspect to match your specific needs.</p>
+                </div>
+              </div>
+              <div class="feature-panel" data-panel="tools">
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>Developer Tools</h3>
+                  <p>Powerful debugging and development tools included.</p>
+                </div>
+                <div class="feature-card" data-tip="feature-card">
+                  <h3>CLI Support</h3>
+                  <p>Command-line interface for automation and scripting.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Setup Section -->
+        <section
+          id="setup"
+          class="section section-setup"
+          data-tip="section-setup"
+        >
+          <h2 class="section-title">
+            Quick Setup
+            <a
+              href="#setup"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <p>Get started in minutes with our simple setup process.</p>
+            <div class="code-block" data-tip="code-block">
+              <div class="code-header">
+                <span class="code-language">bash</span>
+                <button class="code-copy" aria-label="Copy code">Copy</button>
+              </div>
+              <pre><code>npm install package-name
+npm run dev</code></pre>
+            </div>
+            <p>
+              After installation, you can start using the platform.
+              <span class="inline-note" data-tip="inline-note"
+                >Note: Make sure you have Node.js 18+ installed.</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section
+          id="examples"
+          class="section section-examples"
+          data-tip="section-examples"
+        >
+          <h2 class="section-title">
+            Examples & Use Cases
+            <a
+              href="#examples"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <div class="examples-grid">
+              <div class="example-card" data-tip="example-card">
+                <h3>E-commerce Platform</h3>
+                <p>
+                  Build a complete online store with payment processing and
+                  inventory management.
+                </p>
+              </div>
+              <div class="example-card" data-tip="example-card">
+                <h3>Content Management</h3>
+                <p>
+                  Create a flexible CMS for blogs, portfolios, and documentation
+                  sites.
+                </p>
+              </div>
+              <div class="example-card" data-tip="example-card">
+                <h3>Data Dashboard</h3>
+                <p>
+                  Visualize and analyze data with interactive charts and
+                  real-time updates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section
+          id="pricing"
+          class="section section-pricing"
+          data-tip="section-pricing"
+        >
+          <h2 class="section-title">
+            Pricing Plans
+            <a
+              href="#pricing"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <div class="pricing-grid">
+              <div class="plan-card" data-tip="plan-card">
+                <h3>Starter</h3>
+                <div class="plan-price">$9<span>/month</span></div>
+                <ul class="plan-features">
+                  <li>Basic features</li>
+                  <li>Community support</li>
+                  <li>5 projects</li>
+                </ul>
+                <button class="plan-cta">Get Started</button>
+              </div>
+              <div class="plan-card featured" data-tip="plan-card">
+                <h3>Professional</h3>
+                <div class="plan-price">$29<span>/month</span></div>
+                <ul class="plan-features">
+                  <li>All features</li>
+                  <li>Priority support</li>
+                  <li>Unlimited projects</li>
+                </ul>
+                <button class="plan-cta">Get Started</button>
+              </div>
+              <div class="plan-card" data-tip="plan-card">
+                <h3>Enterprise</h3>
+                <div class="plan-price">Custom</div>
+                <ul class="plan-features">
+                  <li>Everything in Pro</li>
+                  <li>Dedicated support</li>
+                  <li>Custom integrations</li>
+                </ul>
+                <button class="plan-cta">Contact Sales</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section section-faq" data-tip="section-faq">
+          <h2 class="section-title">
+            Frequently Asked Questions
+            <a
+              href="#faq"
+              class="anchor-link"
+              data-tip="anchor-link"
+              aria-label="Copy link to section"
+              >¶</a
+            >
+          </h2>
+          <div class="content">
+            <div class="faq-list">
+              <div class="faq-item" data-tip="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>What is the minimum system requirement?</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    You need Node.js 18 or higher and a modern web browser. No
+                    additional dependencies required.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" data-tip="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>Can I use this for commercial projects?</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Yes, our platform is licensed for commercial use. Check the
+                    pricing plans for details.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item" data-tip="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  <span>How do I get support?</span>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                <div class="faq-answer">
+                  <p>
+                    Community support is available on our forums. Professional
+                    and Enterprise plans include priority support.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer" data-tip="footer">
+      <div class="footer-container">
+        <p>
+          &copy; <span id="current-year">2024</span> InfoDocs. All rights
+          reserved.
+        </p>
+        <nav class="footer-nav" data-tip="footer-nav">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

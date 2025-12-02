@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkInBio-App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Screen reader announcements -->
+  <div id="tip-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="top-nav" data-tip="top-nav">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="assets/logo.svg" alt="LinkInBio" class="logo-img">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="promo-cover" data-tip="promo-cover">
+      <img src="assets/cover.jpg" alt="Cover">
+    </div>
+
+    <div class="container">
+      <section class="profile" data-tip="profile">
+        <div class="avatar" data-tip="avatar">
+          <img src="assets/avatar.jpg" alt="Profile">
+        </div>
+        <h1 class="handle" data-tip="handle">@johndoe</h1>
+        <p class="bio" data-tip="bio">Building amazing products and sharing knowledge with the community.</p>
+      </section>
+
+      <section class="highlight" data-tip="highlight">
+        <div class="highlight-content">
+          <h2>New Course Launch</h2>
+          <p>Learn React from scratch with hands-on projects</p>
+          <a href="#" class="btn btn-highlight highlight-cta" data-tip="highlight-cta">Enroll Now</a>
+        </div>
+      </section>
+
+      <section class="link-stack" data-tip="link-stack">
+        <a href="#" class="link-item" data-tip="link-item" data-link-id="1">
+          <div class="link-content">
+            <span class="link-badge" data-tip="link-badge">New</span>
+            <span class="link-label">Latest Blog Post</span>
+          </div>
+          <div class="link-actions">
+            <button type="button" class="link-move-up" aria-label="Move up">↑</button>
+            <button type="button" class="link-move-down" aria-label="Move down">↓</button>
+            <button type="button" class="link-pin" aria-label="Pin to top">📌</button>
+          </div>
+        </a>
+
+        <a href="#" class="link-item" data-tip="link-item" data-link-id="2">
+          <div class="link-content">
+            <span class="link-label">Portfolio Website</span>
+          </div>
+          <div class="link-actions">
+            <button type="button" class="link-move-up" aria-label="Move up">↑</button>
+            <button type="button" class="link-move-down" aria-label="Move down">↓</button>
+            <button type="button" class="link-pin" aria-label="Pin to top">📌</button>
+          </div>
+        </a>
+
+        <a href="#" class="link-item pinned" data-tip="link-item" data-link-id="3">
+          <div class="link-content">
+            <span class="link-label">Free Resources</span>
+          </div>
+          <div class="link-actions">
+            <button type="button" class="link-move-up" aria-label="Move up">↑</button>
+            <button type="button" class="link-move-down" aria-label="Move down">↓</button>
+            <button type="button" class="link-pin active" aria-label="Unpin">📌</button>
+          </div>
+        </a>
+
+        <a href="#" class="link-item" data-tip="link-item" data-link-id="4">
+          <div class="link-content">
+            <span class="link-label">Contact Me</span>
+          </div>
+          <div class="link-actions">
+            <button type="button" class="link-move-up" aria-label="Move up">↑</button>
+            <button type="button" class="link-move-down" aria-label="Move down">↓</button>
+            <button type="button" class="link-pin" aria-label="Pin to top">📌</button>
+          </div>
+        </a>
+
+        <a href="#" class="link-item" data-tip="link-item" data-link-id="5">
+          <div class="link-content">
+            <span class="link-label">Subscribe to Newsletter</span>
+          </div>
+          <div class="link-actions">
+            <button type="button" class="link-move-up" aria-label="Move up">↑</button>
+            <button type="button" class="link-move-down" aria-label="Move down">↓</button>
+            <button type="button" class="link-pin" aria-label="Pin to top">📌</button>
+          </div>
+        </a>
+      </section>
+
+      <section class="social-row" data-tip="social-row">
+        <a href="#" class="social-icon" data-tip="social-icon" aria-label="Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <use href="assets/icons.svg#icon-twitter"></use>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" data-tip="social-icon" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <use href="assets/icons.svg#icon-instagram"></use>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" data-tip="social-icon" aria-label="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <use href="assets/icons.svg#icon-github"></use>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" data-tip="social-icon" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <use href="assets/icons.svg#icon-linkedin"></use>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" data-tip="social-icon" aria-label="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <use href="assets/icons.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-tip="footer">
+    <div class="container">
+      <p>&copy; <span id="current-year">2024</span> LinkHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="tip-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <div id="modal-description" class="modal-body">
+        <div class="modal-section">
+          <h3>What</h3>
+          <p class="modal-what"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Why</h3>
+          <p class="modal-why"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Tips</h3>
+          <ul class="modal-tips"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tip Card (tooltip) -->
+  <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+    <div class="tip-title"></div>
+    <div class="tip-why"></div>
+    <ul class="tip-list"></ul>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="app.js"></script>
+  <script src="tips.js"></script>
+</body>
+</html>
+

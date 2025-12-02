@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadContact-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">
+            <img src="assets/logo.svg" alt="LeadContact" class="logo-img" />
+          </a>
+          <nav class="main-nav">
+            <a href="#contact">Contact</a>
+            <a href="#faqs">FAQs</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section headline" data-tip="headline">
+        <div class="container">
+          <div class="headline-content">
+            <div class="headline-image">
+              <img src="assets/hero.svg" alt="Contact" class="hero-image" />
+            </div>
+            <div class="headline-text">
+              <h1 class="headline-title">
+                Let's Build Something Amazing Together
+              </h1>
+              <p class="headline-subtitle">
+                Get in touch and let's discuss how we can help bring your vision
+                to life. We're here to answer your questions and explore
+                opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-proof" data-tip="social-proof">
+        <div class="container">
+          <p class="proof-text">Trusted by 10,000+ clients worldwide</p>
+          <div class="proof-logos">
+            <span class="proof-logo">TechCorp</span>
+            <span class="proof-logo">StartupHub</span>
+            <span class="proof-logo">DevStudio</span>
+            <span class="proof-logo">CodeLab</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section lead-form" data-tip="lead-form">
+        <div class="container">
+          <h2>Get In Touch</h2>
+          <p class="form-intro">
+            Fill out the form below and we'll get back to you within 24 hours.
+          </p>
+          <form class="contact-form" id="contact-form">
+            <div class="form-fields" data-tip="form-fields">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  aria-required="true"
+                  aria-describedby="name-error"
+                />
+                <span
+                  class="error-message"
+                  id="name-error"
+                  role="alert"
+                  aria-live="polite"
+                ></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-error"
+                />
+                <span
+                  class="error-message"
+                  id="email-error"
+                  role="alert"
+                  aria-live="polite"
+                ></span>
+              </div>
+            </div>
+            <div class="form-group message-field" data-tip="message-field">
+              <label for="message">Message (Optional)</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                aria-describedby="message-error"
+              ></textarea>
+              <span
+                class="error-message"
+                id="message-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div class="form-group consent" data-tip="consent">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  aria-required="true"
+                  aria-describedby="consent-error"
+                />
+                <span>I agree to the privacy policy and terms of service.</span>
+              </label>
+              <span
+                class="error-message"
+                id="consent-error"
+                role="alert"
+                aria-live="polite"
+              ></span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary submit-btn"
+              data-tip="submit-btn"
+            >
+              Get In Touch
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="contact-info" data-tip="contact-info">
+        <div class="container">
+          <h2>Or Reach Us Directly</h2>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <span class="contact-icon">📧</span>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a
+                  href="mailto:hello@example.com"
+                  class="contact-link"
+                  data-copy="hello@example.com"
+                  >hello@example.com</a
+                >
+                <button
+                  class="copy-btn"
+                  aria-label="Copy email"
+                  data-copy-target="hello@example.com"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <div class="contact-method">
+              <span class="contact-icon">📱</span>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <a
+                  href="tel:+1234567890"
+                  class="contact-link"
+                  data-copy="+1 (234) 567-8900"
+                  >+1 (234) 567-8900</a
+                >
+                <button
+                  class="copy-btn"
+                  aria-label="Copy phone"
+                  data-copy-target="+1 (234) 567-8900"
+                >
+                  Copy
+                </button>
+              </div>
+            </div>
+            <div class="contact-method">
+              <span class="contact-icon">💬</span>
+              <div class="contact-details">
+                <h3>WhatsApp</h3>
+                <a
+                  href="https://wa.me/1234567890"
+                  class="contact-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Chat on WhatsApp</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy" data-tip="privacy">
+        <div class="container">
+          <p class="privacy-text">
+            Your information is secure and will only be used to respond to your
+            inquiry. We never share your data with third parties.
+            <a href="#">Read our privacy policy</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="faqs" class="section faqs" data-tip="faqs">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How quickly will you respond?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We typically respond within 24 hours during business days. For
+                  urgent matters, please call us directly.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What information do you need?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Just your name and email are required. The message field is
+                  optional but helps us understand your needs better.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Is my information secure?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, we use industry-standard encryption and never share your
+                  data with third parties. Your privacy is our priority.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I schedule a call instead?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! Mention your preferred time in your message, or
+                  call us directly to schedule a consultation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> ContactHub. All rights
+            reserved.
+          </p>
+          <nav class="footer-nav" data-tip="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

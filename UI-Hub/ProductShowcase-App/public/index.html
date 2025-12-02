@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProductShowcase-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">
+            <img src="assets/logo.svg" alt="ProductShowcase" class="logo-img" />
+          </a>
+          <nav class="main-nav">
+            <a href="#features">Features</a>
+            <a href="#specs">Specs</a>
+            <a href="#comparison">Comparison</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faqs">FAQs</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section product-hero" data-tip="product-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-image">
+              <img
+                src="assets/product-hero.svg"
+                alt="Product"
+                class="product-image"
+              />
+            </div>
+            <div class="hero-text">
+              <h1 class="hero-title">Premium Product Pro</h1>
+              <p class="hero-subtitle">
+                The ultimate solution for professionals who demand excellence.
+                Built with cutting-edge technology and designed for performance.
+              </p>
+              <div class="hero-ctas">
+                <a
+                  href="#purchase"
+                  class="btn btn-primary"
+                  data-tip="purchase-cta"
+                  >Buy Now - $299</a
+                >
+                <a
+                  href="#features"
+                  class="btn btn-secondary"
+                  data-tip="secondary-cta"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery" data-tip="gallery">
+        <div class="container">
+          <h2>Product Gallery</h2>
+          <div class="gallery-wrapper">
+            <div class="gallery-stage" data-tip="gallery-stage">
+              <img
+                id="main-image"
+                src="assets/gallery-1.svg"
+                alt="Product view 1"
+                class="main-image"
+              />
+            </div>
+            <div class="gallery-thumbs">
+              <button
+                class="thumb active"
+                data-tip="gallery-thumb"
+                data-image="assets/gallery-1.svg"
+                aria-label="View product image 1"
+              >
+                <img src="assets/gallery-1.svg" alt="Thumbnail 1" />
+              </button>
+              <button
+                class="thumb"
+                data-tip="gallery-thumb"
+                data-image="assets/gallery-2.svg"
+                aria-label="View product image 2"
+              >
+                <img src="assets/gallery-2.svg" alt="Thumbnail 2" />
+              </button>
+              <button
+                class="thumb"
+                data-tip="gallery-thumb"
+                data-image="assets/gallery-3.svg"
+                aria-label="View product image 3"
+              >
+                <img src="assets/gallery-3.svg" alt="Thumbnail 3" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section features" data-tip="features">
+        <div class="container">
+          <h2>Key Features</h2>
+          <div class="features-grid">
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Lightning Fast</h3>
+              <p>
+                Powered by the latest technology for instant performance and
+                seamless user experience.
+              </p>
+            </article>
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">🔒</div>
+              <h3>Secure & Private</h3>
+              <p>
+                Enterprise-grade security with end-to-end encryption to protect
+                your data.
+              </p>
+            </article>
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">📱</div>
+              <h3>Cross-Platform</h3>
+              <p>
+                Works seamlessly across all devices and operating systems for
+                maximum flexibility.
+              </p>
+            </article>
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">🎨</div>
+              <h3>Beautiful Design</h3>
+              <p>
+                Thoughtfully crafted interface that's both beautiful and
+                intuitive to use.
+              </p>
+            </article>
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">🔄</div>
+              <h3>Auto-Sync</h3>
+              <p>
+                Automatic synchronization across all your devices keeps
+                everything up to date.
+              </p>
+            </article>
+            <article class="card feature-card" data-tip="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>24/7 Support</h3>
+              <p>
+                Round-the-clock customer support to help you whenever you need
+                assistance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="specs" class="section specs" data-tip="specs">
+        <div class="container">
+          <h2>Technical Specifications</h2>
+          <div class="specs-wrapper">
+            <table class="specs-table">
+              <tbody>
+                <tr data-tip="spec-row">
+                  <th>Dimensions</th>
+                  <td>10.5" × 7.2" × 0.8"</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Weight</th>
+                  <td>1.2 lbs (540g)</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Display</th>
+                  <td>12.9" Retina Display, 2732×2048</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Processor</th>
+                  <td>M2 Chip, 8-core CPU, 10-core GPU</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Memory</th>
+                  <td>16GB Unified Memory</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Storage</th>
+                  <td>512GB SSD (configurable up to 2TB)</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Battery</th>
+                  <td>Up to 10 hours of battery life</td>
+                </tr>
+                <tr data-tip="spec-row">
+                  <th>Connectivity</th>
+                  <td>Wi‑Fi 6E, Bluetooth 5.3, USB-C</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="comparison" class="section comparison" data-tip="comparison">
+        <div class="container">
+          <h2>Compare Models</h2>
+          <div class="comparison-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Standard</th>
+                  <th>
+                    Pro
+                    <span
+                      class="comparison-highlight"
+                      data-tip="comparison-highlight"
+                      >Best Value</span
+                    >
+                  </th>
+                  <th>Ultra</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Price</th>
+                  <td>$199</td>
+                  <td>$299</td>
+                  <td>$499</td>
+                </tr>
+                <tr>
+                  <th>Storage</th>
+                  <td>256GB</td>
+                  <td>512GB</td>
+                  <td>1TB</td>
+                </tr>
+                <tr>
+                  <th>Memory</th>
+                  <td>8GB</td>
+                  <td>16GB</td>
+                  <td>32GB</td>
+                </tr>
+                <tr>
+                  <th>Support</th>
+                  <td>Email</td>
+                  <td>Priority</td>
+                  <td>24/7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="section reviews" data-tip="reviews">
+        <div class="container">
+          <h2>Customer Reviews</h2>
+          <div class="reviews-summary">
+            <div class="star-rating" data-tip="star-rating" data-rating="4.5">
+              <span class="stars"></span>
+              <span class="rating-text">4.5 out of 5</span>
+              <span class="review-count">(127 reviews)</span>
+            </div>
+          </div>
+          <div class="reviews-grid">
+            <article class="card review-card" data-tip="review-card">
+              <div class="review-header">
+                <div class="reviewer-name">Alex Johnson</div>
+                <div class="review-stars" data-rating="5">★★★★★</div>
+              </div>
+              <p class="review-text">
+                "Absolutely love this product! It exceeded all my expectations.
+                The build quality is outstanding and the performance is
+                incredible."
+              </p>
+            </article>
+            <article class="card review-card" data-tip="review-card">
+              <div class="review-header">
+                <div class="reviewer-name">Sarah Chen</div>
+                <div class="review-stars" data-rating="4">★★★★☆</div>
+              </div>
+              <p class="review-text">
+                "Great value for money. The features are exactly what I needed,
+                and the customer support is responsive and helpful."
+              </p>
+            </article>
+            <article class="card review-card" data-tip="review-card">
+              <div class="review-header">
+                <div class="reviewer-name">Michael Rodriguez</div>
+                <div class="review-stars" data-rating="5">★★★★★</div>
+              </div>
+              <p class="review-text">
+                "Best purchase I've made this year. The design is beautiful and
+                it works flawlessly. Highly recommend!"
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faqs" class="section faqs" data-tip="faqs">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What's included in the box?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Each product comes with the main device, charging cable, quick
+                  start guide, and a 1-year warranty card.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you offer a warranty?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, all products come with a comprehensive 1-year warranty
+                  covering manufacturing defects and hardware issues.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I return the product if I'm not satisfied?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, we offer a 30-day money-back guarantee. If you're not
+                  completely satisfied, you can return it for a full refund.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does shipping take?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Standard shipping takes 5-7 business days. Express shipping
+                  (2-3 days) is available at checkout for an additional fee.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> ProductHub. All rights
+            reserved.
+          </p>
+          <nav class="footer-nav" data-tip="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+            <a href="#">Shipping Info</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

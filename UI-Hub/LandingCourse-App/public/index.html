@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LandingCourse-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">
+            <img src="assets/logo.svg" alt="LandingCourse" class="logo-img" />
+          </a>
+          <nav class="main-nav">
+            <a href="#curriculum">Curriculum</a>
+            <a href="#instructor">Instructor</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faqs">FAQs</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero" data-tip="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Master Web Development in 12 Weeks</h1>
+            <p class="hero-subtitle">
+              Build real projects, learn from industry experts, and launch your
+              career as a full-stack developer.
+            </p>
+            <a href="#pricing" class="btn btn-primary" data-tip="enroll-cta"
+              >Enroll Now</a
+            >
+          </div>
+          <div class="hero-visual">
+            <img
+              src="assets/hero.svg"
+              alt="Course preview"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-row" data-tip="trust-row">
+        <div class="container">
+          <p class="trust-text">
+            Trusted by 5,000+ students from companies like:
+          </p>
+          <div class="trust-logos">
+            <span class="trust-logo">TechCorp</span>
+            <span class="trust-logo">StartupHub</span>
+            <span class="trust-logo">DevStudio</span>
+            <span class="trust-logo">CodeLab</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="value-props"
+        class="section value-props"
+        data-tip="value-props"
+      >
+        <div class="container">
+          <h2>Why Choose This Course?</h2>
+          <div class="value-grid">
+            <article class="card value-card" data-tip="value-card">
+              <div class="value-icon">🚀</div>
+              <h3>Project-Based Learning</h3>
+              <p>
+                Build 5 real-world projects that you can add to your portfolio
+                and showcase to employers.
+              </p>
+            </article>
+            <article class="card value-card" data-tip="value-card">
+              <div class="value-icon">👨‍🏫</div>
+              <h3>Expert Instruction</h3>
+              <p>
+                Learn from industry professionals with 10+ years of experience
+                building scalable applications.
+              </p>
+            </article>
+            <article class="card value-card" data-tip="value-card">
+              <div class="value-icon">💼</div>
+              <h3>Career Support</h3>
+              <p>
+                Get resume reviews, interview prep, and job placement assistance
+                to land your dream role.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="curriculum" class="section curriculum" data-tip="curriculum">
+        <div class="container">
+          <h2>What You'll Learn</h2>
+          <div class="curriculum-timeline">
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>HTML & CSS Fundamentals</h3>
+                <p>
+                  Master semantic HTML and modern CSS with Flexbox and Grid.
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>JavaScript Essentials</h3>
+                <p>
+                  Learn ES6+, DOM manipulation, and asynchronous programming.
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>React & State Management</h3>
+                <p>
+                  Build interactive UIs with React hooks and modern patterns.
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Backend Development</h3>
+                <p>Create RESTful APIs with Node.js, Express, and databases.</p>
+              </div>
+            </div>
+            <div class="curriculum-step" data-tip="curriculum-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>Full-Stack Projects</h3>
+                <p>Build complete applications from frontend to deployment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="instructor" class="section instructor" data-tip="instructor">
+        <div class="container">
+          <div class="instructor-content">
+            <div class="instructor-image">
+              <img
+                src="assets/instructor.svg"
+                alt="Instructor"
+                class="instructor-photo"
+                data-tip="instructor-photo"
+              />
+            </div>
+            <div class="instructor-text">
+              <h2>Meet Your Instructor</h2>
+              <p class="instructor-bio" data-tip="instructor-bio">
+                Sarah Johnson is a senior full-stack developer with 12 years of
+                experience building applications for Fortune 500 companies.
+                She's taught over 10,000 students and helped hundreds land their
+                first developer jobs. Her courses focus on practical, real-world
+                skills that employers actually need.
+              </p>
+              <ul class="instructor-credentials">
+                <li>Former Lead Developer at TechCorp</li>
+                <li>Published author of "Modern Web Development"</li>
+                <li>10,000+ students taught</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing" data-tip="pricing">
+        <div class="container">
+          <h2>Simple, Transparent Pricing</h2>
+          <div class="pricing-grid">
+            <article class="card price-card" data-tip="price-card">
+              <h3>Complete Course</h3>
+              <div class="price-amount">
+                <span class="currency">$</span>
+                <span class="amount">497</span>
+              </div>
+              <ul class="price-features">
+                <li>12 weeks of content</li>
+                <li>5 real-world projects</li>
+                <li>Lifetime access</li>
+                <li>Community support</li>
+                <li>Career resources</li>
+              </ul>
+              <a href="#lead-form" class="btn btn-primary">Enroll Now</a>
+            </article>
+          </div>
+          <p class="guarantee" data-tip="guarantee">
+            <strong>30-Day Money-Back Guarantee</strong> – If you're not
+            satisfied, we'll refund every penny. No questions asked.
+          </p>
+        </div>
+      </section>
+
+      <section id="faqs" class="section faqs" data-tip="faqs">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need prior experience?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  No prior experience required! We start from the basics and
+                  build up to advanced concepts. However, basic computer skills
+                  are helpful.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long do I have access?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You get lifetime access to all course materials, including
+                  future updates and new content we add.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What if I get stuck?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We have an active community forum where you can ask questions
+                  and get help from instructors and fellow students.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I get a refund?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! We offer a 30-day money-back guarantee. If you're not
+                  satisfied for any reason, just let us know.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lead-form" class="section lead-form" data-tip="lead-form">
+        <div class="container">
+          <h2>Get Started Today</h2>
+          <p class="form-intro">
+            Enter your details below to enroll and start your journey.
+          </p>
+          <form class="contact-form" id="enroll-form">
+            <div class="form-fields" data-tip="form-fields">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  aria-required="true"
+                />
+                <span class="error-message" id="name-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="error-message" id="email-error"></span>
+              </div>
+            </div>
+            <div class="form-group consent" data-tip="consent">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  aria-required="true"
+                />
+                <span
+                  >I agree to receive course updates and marketing emails. You
+                  can unsubscribe at any time.</span
+                >
+              </label>
+              <span class="error-message" id="consent-error"></span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary submit-btn"
+              data-tip="submit-btn"
+            >
+              Get Syllabus
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> CourseHub. All rights
+            reserved.
+          </p>
+          <nav class="footer-nav" data-tip="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>

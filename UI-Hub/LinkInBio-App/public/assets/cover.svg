@@ -1,0 +1,14 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b0f14;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#111827;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0b0f14;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="300" fill="url(#coverGrad)"/>
+  <circle cx="200" cy="150" r="80" fill="#ec4899" opacity="0.3"/>
+  <circle cx="600" cy="150" r="100" fill="#8b5cf6" opacity="0.3"/>
+  <text x="400" y="160" font-family="system-ui" font-size="48" fill="#f0f3f7" text-anchor="middle" opacity="0.2">Cover</text>
+</svg>
+

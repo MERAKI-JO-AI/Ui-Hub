@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlogNews-App — Article</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Screen reader announcements -->
+  <div id="tip-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar" data-tip="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <header class="site-header" data-tip="top-nav">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.svg" alt="BlogNews" class="logo-img">
+        </a>
+        <nav class="main-nav">
+          <a href="index.html#featured">Featured</a>
+          <a href="index.html#posts">Posts</a>
+          <a href="index.html#newsletter">Newsletter</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-article">
+      <div class="post-nav" data-tip="post-nav">
+        <div class="container">
+          <a href="index.html" class="breadcrumb">← Back to Articles</a>
+        </div>
+      </div>
+
+      <div class="container">
+        <header class="post-meta" data-tip="post-meta">
+          <div class="post-meta-row">
+            <div class="author-chip" data-tip="author-chip">
+              <img src="assets/author.jpg" alt="Author" class="author-avatar">
+              <div class="author-info">
+                <span class="author-name">John Doe</span>
+                <span class="author-role">Senior Developer</span>
+              </div>
+            </div>
+            <div class="publish-date" data-tip="publish-date">
+              <span class="date-label">Published</span>
+              <time datetime="2024-03-15">March 15, 2024</time>
+            </div>
+          </div>
+          <h1 class="post-title">Building Modern Web Applications with React</h1>
+          <p class="post-subtitle">Learn how to build scalable, maintainable web applications using React and modern JavaScript patterns.</p>
+        </header>
+
+        <div class="lead-image" data-tip="lead-image">
+          <img src="assets/cover-1.jpg" alt="Featured article cover">
+        </div>
+
+        <div class="post-content" data-tip="post-content">
+          <p>React has become the de facto standard for building modern web applications. In this comprehensive guide, we'll explore how to build scalable, maintainable applications using React and modern JavaScript patterns.</p>
+
+          <h2>Getting Started with React</h2>
+          <p>React is a JavaScript library for building user interfaces. It allows you to create reusable components and build complex UIs from simple pieces.</p>
+
+          <h3>Key Concepts</h3>
+          <ul>
+            <li>Components: The building blocks of React applications</li>
+            <li>Props: Data passed from parent to child components</li>
+            <li>State: Component-specific data that can change over time</li>
+            <li>Hooks: Functions that let you use state and other React features</li>
+          </ul>
+
+          <div class="inline-image" data-tip="inline-image">
+            <img src="assets/cover-2.jpg" alt="React component structure">
+            <figcaption>React component structure example</figcaption>
+          </div>
+
+          <h2>Building Components</h2>
+          <p>Components are the heart of React applications. They let you split the UI into independent, reusable pieces.</p>
+
+          <div class="code-block" data-tip="code-block">
+            <div class="code-header">
+              <span class="code-language">JavaScript</span>
+              <button class="copy-code" aria-label="Copy code">Copy</button>
+            </div>
+            <pre><code>function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Welcome name="Sara" /&gt;
+      &lt;Welcome name="Cahal" /&gt;
+      &lt;Welcome name="Edite" /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+          </div>
+
+          <h2>State Management</h2>
+          <p>State allows components to create and manage their own data. The useState hook is the most common way to add state to functional components.</p>
+
+          <div class="pull-quote" data-tip="pull-quote">
+            <blockquote>
+              <p>"The best way to learn React is by building real applications."</p>
+            </blockquote>
+          </div>
+
+          <h2>Best Practices</h2>
+          <p>When building React applications, it's important to follow best practices:</p>
+          <ol>
+            <li>Keep components small and focused</li>
+            <li>Use functional components with hooks</li>
+            <li>Lift state up when multiple components need it</li>
+            <li>Use keys when rendering lists</li>
+            <li>Optimize performance with React.memo and useMemo</li>
+          </ol>
+
+          <h2>Conclusion</h2>
+          <p>React provides a powerful and flexible way to build modern web applications. By following best practices and understanding core concepts, you can create maintainable and scalable applications.</p>
+        </div>
+
+        <div class="share-row" data-tip="share-row">
+          <span class="share-label">Share this article:</span>
+          <div class="share-buttons">
+            <button class="share-btn" aria-label="Share on Twitter">Twitter</button>
+            <button class="share-btn" aria-label="Share on Facebook">Facebook</button>
+            <button class="share-btn" aria-label="Share on LinkedIn">LinkedIn</button>
+            <button class="share-btn" aria-label="Copy link">Copy Link</button>
+          </div>
+        </div>
+
+        <div class="next-prev" data-tip="next-prev">
+          <a href="post.html" class="prev-post">
+            <span class="nav-label">Previous</span>
+            <span class="nav-title">Mastering React Hooks</span>
+          </a>
+          <a href="post.html" class="next-post">
+            <span class="nav-label">Next</span>
+            <span class="nav-title">CSS Grid Layout Techniques</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <section class="comments" data-tip="comments">
+      <div class="container">
+        <h2>Comments</h2>
+        <p class="comments-note">Comments are currently disabled. This is a static blog demonstration.</p>
+        <div class="comments-placeholder">
+          <p>In a real application, this would be a dynamic comments section with user interactions, moderation, and replies.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-tip="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; <span id="current-year">2024</span> BlogHub. All rights reserved.</p>
+        <nav class="footer-nav" data-tip="footer-nav">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="tip-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <div id="modal-description" class="modal-body">
+        <div class="modal-section">
+          <h3>What</h3>
+          <p class="modal-what"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Why</h3>
+          <p class="modal-why"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Tips</h3>
+          <ul class="modal-tips"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tip Card (tooltip) -->
+  <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+    <div class="tip-title"></div>
+    <div class="tip-why"></div>
+    <ul class="tip-list"></ul>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="app.js"></script>
+  <script src="tips.js"></script>
+</body>
+</html>
+

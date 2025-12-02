@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootcamp-App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Screen reader announcements -->
+    <div
+      id="tip-live"
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <header class="site-header" data-tip="top-nav">
+      <div class="container">
+        <div class="header-content">
+          <a href="#hero" class="logo">
+            <img src="assets/logo.svg" alt="Bootcamp" class="logo-img" />
+          </a>
+          <nav class="main-nav">
+            <a href="#agenda">Agenda</a>
+            <a href="#speakers">Speakers</a>
+            <a href="#venue">Venue</a>
+            <a href="#registration">Register</a>
+            <a href="#faqs">FAQs</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section event-hero" data-tip="event-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-image">
+              <img src="assets/hero.svg" alt="Event" class="hero-image" />
+            </div>
+            <div class="hero-text">
+              <h1 class="hero-title">Web Development Bootcamp 2024</h1>
+              <p class="hero-subtitle">
+                Join us for an intensive 2-day bootcamp covering modern web
+                development, from fundamentals to advanced techniques.
+              </p>
+              <div class="hero-meta">
+                <div class="event-datetime" data-tip="event-datetime">
+                  <span class="meta-icon">📅</span>
+                  <span>March 15-16, 2024 • 9:00 AM - 5:00 PM</span>
+                </div>
+                <div class="event-location" data-tip="event-location">
+                  <span class="meta-icon">📍</span>
+                  <span>Tech Convention Center, San Francisco, CA</span>
+                </div>
+              </div>
+              <a
+                href="#registration"
+                class="btn btn-primary"
+                data-tip="register-cta"
+                >Reserve Your Seat</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-facts" data-tip="quick-facts">
+        <div class="container">
+          <div class="facts-grid">
+            <article class="card fact-card" data-tip="fact-card">
+              <div class="fact-icon">📅</div>
+              <h3>When</h3>
+              <p>March 15-16, 2024</p>
+            </article>
+            <article class="card fact-card" data-tip="fact-card">
+              <div class="fact-icon">📍</div>
+              <h3>Where</h3>
+              <p>San Francisco, CA</p>
+            </article>
+            <article class="card fact-card" data-tip="fact-card">
+              <div class="fact-icon">💰</div>
+              <h3>Price</h3>
+              <p>$299 Early Bird</p>
+            </article>
+            <article class="card fact-card" data-tip="fact-card">
+              <div class="fact-icon">👥</div>
+              <h3>Seats</h3>
+              <p>50 Available</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="agenda" class="section agenda" data-tip="agenda">
+        <div class="container">
+          <h2>Event Agenda</h2>
+          <div class="agenda-list">
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">9:00 AM</div>
+              <div class="agenda-content">
+                <h3>Welcome & Introduction</h3>
+                <p class="agenda-description">
+                  Kick off the bootcamp with introductions and an overview of
+                  what you'll learn over the next two days.
+                </p>
+              </div>
+            </div>
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">10:00 AM</div>
+              <div class="agenda-content">
+                <h3>HTML & CSS Fundamentals</h3>
+                <p class="agenda-description">
+                  Master semantic HTML and modern CSS with Flexbox and Grid.
+                  Build responsive layouts from scratch.
+                </p>
+              </div>
+            </div>
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">12:00 PM</div>
+              <div class="agenda-content">
+                <h3>Lunch Break</h3>
+                <p class="agenda-description">
+                  Network with fellow attendees and enjoy a catered lunch.
+                </p>
+              </div>
+            </div>
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">1:00 PM</div>
+              <div class="agenda-content">
+                <h3>JavaScript Essentials</h3>
+                <p class="agenda-description">
+                  Learn ES6+, DOM manipulation, and asynchronous programming.
+                  Hands-on coding exercises included.
+                </p>
+              </div>
+            </div>
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">3:00 PM</div>
+              <div class="agenda-content">
+                <h3>React & Modern Frameworks</h3>
+                <p class="agenda-description">
+                  Build interactive UIs with React hooks and modern patterns.
+                  Create your first React application.
+                </p>
+              </div>
+            </div>
+            <div class="agenda-item" data-tip="agenda-item">
+              <div class="agenda-time">5:00 PM</div>
+              <div class="agenda-content">
+                <h3>Day 1 Wrap-up & Q&A</h3>
+                <p class="agenda-description">
+                  Review what we've learned and get answers to your questions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="speakers" class="section speakers" data-tip="speakers">
+        <div class="container">
+          <h2>Featured Speakers</h2>
+          <div class="speakers-grid">
+            <article
+              class="card speaker-card"
+              data-tip="speaker-card"
+              data-tag="Design"
+            >
+              <div class="speaker-image">
+                <img src="assets/speaker-1.svg" alt="Sarah Johnson" />
+              </div>
+              <div class="speaker-info">
+                <h3>Sarah Johnson</h3>
+                <p class="speaker-role">Senior Frontend Developer</p>
+                <p class="speaker-talk">"Building Modern Web Applications"</p>
+              </div>
+            </article>
+            <article
+              class="card speaker-card"
+              data-tip="speaker-card"
+              data-tag="Dev"
+            >
+              <div class="speaker-image">
+                <img src="assets/speaker-2.svg" alt="Michael Chen" />
+              </div>
+              <div class="speaker-info">
+                <h3>Michael Chen</h3>
+                <p class="speaker-role">Full-Stack Architect</p>
+                <p class="speaker-talk">"Scaling Applications for Growth"</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="venue" class="section venue" data-tip="venue">
+        <div class="container">
+          <h2>Venue & Location</h2>
+          <div class="venue-content">
+            <div class="venue-info">
+              <h3>Tech Convention Center</h3>
+              <p>123 Innovation Drive<br />San Francisco, CA 94105</p>
+              <p class="venue-notes">
+                Free parking available. Public transport accessible via BART and
+                Muni.
+              </p>
+            </div>
+            <div class="map-stage" data-tip="map-stage">
+              <img src="assets/venue.svg" alt="Venue map" class="venue-map" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="registration"
+        class="section registration"
+        data-tip="registration"
+      >
+        <div class="container">
+          <h2>Register Now</h2>
+          <p class="form-intro">
+            Secure your spot at the bootcamp. Limited seats available.
+          </p>
+          <form class="registration-form" id="reg-form">
+            <div class="reg-fields" data-tip="reg-fields">
+              <div class="form-group">
+                <label for="reg-name">Full Name</label>
+                <input
+                  type="text"
+                  id="reg-name"
+                  name="name"
+                  required
+                  aria-required="true"
+                />
+                <span class="error-message" id="reg-name-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="reg-email">Email Address</label>
+                <input
+                  type="email"
+                  id="reg-email"
+                  name="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="error-message" id="reg-email-error"></span>
+              </div>
+            </div>
+            <div class="form-group ticket-select" data-tip="ticket-select">
+              <label for="ticket-type">Ticket Type</label>
+              <select
+                id="ticket-type"
+                name="ticket-type"
+                required
+                aria-required="true"
+              >
+                <option value="">Select a ticket</option>
+                <option value="early-bird">Early Bird - $299</option>
+                <option value="regular">Regular - $399</option>
+                <option value="vip">VIP - $599</option>
+              </select>
+              <span class="error-message" id="ticket-error"></span>
+            </div>
+            <div class="form-group reg-consent" data-tip="reg-consent">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="reg-consent"
+                  name="consent"
+                  required
+                  aria-required="true"
+                />
+                <span
+                  >I agree to the terms and conditions and privacy policy.</span
+                >
+              </label>
+              <span class="error-message" id="consent-error"></span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary reg-submit"
+              data-tip="reg-submit"
+            >
+              Register Now
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section id="faqs" class="section faqs" data-tip="faqs">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What should I bring to the event?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Please bring your laptop, charger, and a notebook. We'll
+                  provide all other materials and refreshments.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Is there parking available?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes, free parking is available at the venue. We also recommend
+                  public transport as it's easily accessible.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I get a refund if I can't attend?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Full refunds are available up to 7 days before the event.
+                  After that, we can transfer your ticket to someone else.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" data-tip="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need prior experience?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Basic computer skills are helpful, but we'll cover everything
+                  from the fundamentals. All skill levels are welcome.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-tip="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="current-year">2024</span> EventHub. All rights
+            reserved.
+          </p>
+          <nav class="footer-nav" data-tip="footer-nav">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+            <a href="#">Refund Policy</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="tip-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-description" class="modal-body">
+          <div class="modal-section">
+            <h3>What</h3>
+            <p class="modal-what"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Why</h3>
+            <p class="modal-why"></p>
+          </div>
+          <div class="modal-section">
+            <h3>Tips</h3>
+            <ul class="modal-tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Card (tooltip) -->
+    <div id="tip-card" class="tip-card" role="tooltip" aria-hidden="true">
+      <div class="tip-title"></div>
+      <div class="tip-why"></div>
+      <ul class="tip-list"></ul>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-to-top"
+      class="scroll-to-top"
+      aria-label="Scroll to top"
+      aria-hidden="true"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="app.js"></script>
+    <script src="tips.js"></script>
+  </body>
+</html>
