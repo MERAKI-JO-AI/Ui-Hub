@@ -27,21 +27,25 @@
   // Sidebar Toggle
   function setupSidebar() {
     const sidebar = document.getElementById('sidebar');
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const mainContent = document.querySelector('.main-content');
+    const sidebarToggle = document.querySelector('[data-sidebar-toggle]') || document.getElementById('sidebar-toggle');
+    const shell = document.documentElement; // or a top container
+    const KEY = 'dash_sidebar_collapsed';
     
     if (!sidebar || !sidebarToggle) return;
 
-    // Load saved state from localStorage
-    const savedState = localStorage.getItem('sidebar-collapsed');
-    if (savedState === 'true') {
-      sidebar.classList.add('collapsed');
+    function applySidebarState() {
+      const collapsed = localStorage.getItem(KEY) === '1';
+      shell.classList.toggle('sidebar-collapsed', collapsed);
+      sidebar.classList.toggle('collapsed', collapsed);
     }
 
+    // Load and apply saved state
+    applySidebarState();
+
     sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-      // Save state to localStorage
-      localStorage.setItem('sidebar-collapsed', sidebar.classList.contains('collapsed'));
+      const next = !(localStorage.getItem(KEY) === '1');
+      localStorage.setItem(KEY, next ? '1' : '0');
+      applySidebarState();
     });
   }
 

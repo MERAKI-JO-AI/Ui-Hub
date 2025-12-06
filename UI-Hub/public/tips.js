@@ -161,7 +161,15 @@ const uiTips = {
 (function() {
   'use strict';
 
-  const tipCard = document.getElementById('tip-card');
+  // === Shared tip state (singleton) ===
+  const TIP = {
+    el: null,
+    visible: false,
+    lastX: 0,
+    lastY: 0,
+    margin: 20,
+  };
+
   const tipModal = document.getElementById('tip-modal');
   const tipLive = document.getElementById('tip-live');
   let currentTarget = null;
@@ -171,6 +179,25 @@ const uiTips = {
   let lastFocusedElement = null;
   let focusTrapHandler = null;
 
+  function ensureTipEl() {
+    if (TIP.el) return TIP.el;
+    const el = document.getElementById('tip-card');
+    if (!el) {
+      const newEl = document.createElement('div');
+      newEl.id = 'tip-card';
+      newEl.className = 'tip-card';
+      newEl.setAttribute('role', 'tooltip');
+      newEl.setAttribute('aria-live', 'polite');
+      newEl.setAttribute('aria-hidden', 'true');
+      newEl.innerHTML = '<div class="tip-card-content"></div>';
+      document.body.appendChild(newEl);
+      TIP.el = newEl;
+    } else {
+      TIP.el = el;
+    }
+    return TIP.el;
+  }
+
   // Initialize on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -179,6 +206,8 @@ const uiTips = {
   }
 
   function init() {
+    ensureTipEl();
+    
     // Find all elements with data-tip
     const tipElements = document.querySelectorAll('[data-tip]');
     
@@ -194,20 +223,9 @@ const uiTips = {
       element.addEventListener('mouseenter', (e) => {
         if (!modalOpen) {
           clearTimeout(tipCardTimeout);
-          // Store mouse position for cursor-based positioning
-          window._lastMouseY = e.clientY;
-          window._lastMouseX = e.clientX;
+          TIP.lastX = e.clientX;
+          TIP.lastY = e.clientY;
           showTip(element, tipKey);
-        }
-      });
-      
-      // Update mouse position as user moves mouse over element
-      element.addEventListener('mousemove', (e) => {
-        if (!modalOpen && currentTarget === element) {
-          window._lastMouseY = e.clientY;
-          window._lastMouseX = e.clientX;
-          // Reposition tip card as mouse moves
-          positionTipCard(element);
         }
       });
 
@@ -240,12 +258,12 @@ const uiTips = {
       }
     });
 
-    // Keep tip card visible when hovering over it (only add once)
-    tipCard.addEventListener('mouseenter', () => {
+    // Keep tip card visible when hovering over it
+    TIP.el.addEventListener('mouseenter', () => {
       clearTimeout(tipCardTimeout);
     });
 
-    tipCard.addEventListener('mouseleave', () => {
+    TIP.el.addEventListener('mouseleave', () => {
       hideTip();
     });
 
@@ -271,22 +289,23 @@ const uiTips = {
       }
     });
 
-    // Handle window resize/scroll for tip card positioning
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        if (currentTarget && currentTipKey && !modalOpen) {
-          positionTipCard(currentTarget);
-        }
-      }, 100);
-    });
-
-    window.addEventListener('scroll', () => {
-      if (currentTarget && currentTipKey && !modalOpen) {
-        positionTipCard(currentTarget);
+    // Track pointer globally for smooth follow
+    window.addEventListener('pointermove', (e) => {
+      TIP.lastX = e.clientX;
+      TIP.lastY = e.clientY;
+      if (TIP.visible) {
+        positionTipFixed();
       }
     }, { passive: true });
+
+    // Keep position sane on scroll/resize even if pointer doesn't move
+    ['scroll', 'resize'].forEach(evt => {
+      window.addEventListener(evt, () => {
+        if (TIP.visible) {
+          positionTipFixed();
+        }
+      }, { passive: true });
+    });
   }
 
   function showTip(targetEl, key) {
@@ -298,24 +317,15 @@ const uiTips = {
     const tipData = uiTips[key];
     if (!tipData) return;
 
-    // Populate tip card with just the title
-    tipCard.querySelector('.tip-card-content').textContent = tipData.title;
-
-    // Position and show
-    // Make it invisible first but keep it in flow to get dimensions
-    tipCard.style.visibility = 'hidden';
-    tipCard.style.opacity = '0';
-    tipCard.setAttribute('aria-hidden', 'false');
+    ensureTipEl();
     
-    // Position it immediately - use requestAnimationFrame to ensure DOM is ready
-    requestAnimationFrame(() => {
-      positionTipCard(targetEl);
-      // Make it visible after positioning
-      tipCard.style.visibility = 'visible';
-      requestAnimationFrame(() => {
-        tipCard.style.opacity = '1';
-      });
-    });
+    // Populate tip card with just the title
+    TIP.el.querySelector('.tip-card-content').textContent = tipData.title;
+
+    TIP.visible = true;
+    TIP.el.setAttribute('aria-hidden', 'false');
+    TIP.el.classList.add('is-visible');
+    positionTipFixed();
   }
 
   function hideTip() {
@@ -324,70 +334,43 @@ const uiTips = {
     }
     tipCardTimeout = setTimeout(() => {
       // Only hide if mouse is not over tip card
-      if (!tipCard.matches(':hover')) {
-        tipCard.style.opacity = '0';
-        tipCard.style.visibility = 'hidden';
-        tipCard.setAttribute('aria-hidden', 'true');
+      if (!TIP.el.matches(':hover')) {
+        TIP.visible = false;
+        TIP.el.classList.remove('is-visible');
+        TIP.el.style.transform = 'translate(-9999px, -9999px)';
+        TIP.el.setAttribute('aria-hidden', 'true');
         currentTarget = null;
         currentTipKey = null;
       }
     }, 200);
   }
 
-  function positionTipCard(targetEl) {
-    if (!targetEl || !tipCard) return;
+  // Core positioning (viewport coordinates; no scroll offsets needed)
+  function positionTipFixed() {
+    if (!TIP.el) return;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const rect = TIP.el.getBoundingClientRect();
+    const m = TIP.margin;
 
-    // Get tip card dimensions - if not available yet, use defaults
-    // Temporarily make it visible to measure
-    const wasHidden = tipCard.style.visibility === 'hidden';
-    if (wasHidden) {
-      tipCard.style.visibility = 'visible';
-      tipCard.style.opacity = '0';
+    // Default: bottom-right of cursor
+    let x = TIP.lastX + m;
+    let y = TIP.lastY + m;
+
+    // Flip horizontally if overflowing right
+    if (x + rect.width > vw - 12) {
+      x = TIP.lastX - rect.width - m;
     }
-    
-    const tipRect = tipCard.getBoundingClientRect();
-    const tipWidth = tipRect.width > 0 ? tipRect.width : 250;
-    const tipHeight = tipRect.height > 0 ? tipRect.height : 50;
-    
-    if (wasHidden) {
-      tipCard.style.visibility = 'hidden';
+    // Flip vertically if overflowing bottom
+    if (y + rect.height > vh - 12) {
+      y = TIP.lastY - rect.height - m;
     }
-    
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const offset = 20; // Offset from cursor
-    
-    // Use mouse position if available, otherwise use element center
-    let mouseX = window._lastMouseX;
-    let mouseY = window._lastMouseY;
-    
-    // If no mouse position, use element center
-    if (!mouseX || !mouseY) {
-      const rect = targetEl.getBoundingClientRect();
-      mouseX = rect.left + (rect.width / 2);
-      mouseY = rect.top + (rect.height / 2);
-    }
-    
-    // Position tip card near cursor (prefer bottom-right, adjust if needed)
-    let top = mouseY + offset;
-    let left = mouseX + offset;
-    
-    // Adjust if tip card would go off-screen to the right
-    if (left + tipWidth > viewportWidth - 12) {
-      left = mouseX - tipWidth - offset; // Show to the left of cursor
-    }
-    
-    // Adjust if tip card would go off-screen at the bottom
-    if (top + tipHeight > viewportHeight - 12) {
-      top = mouseY - tipHeight - offset; // Show above cursor
-    }
-    
-    // Clamp to viewport bounds
-    top = Math.max(12, Math.min(top, viewportHeight - tipHeight - 12));
-    left = Math.max(12, Math.min(left, viewportWidth - tipWidth - 12));
-    
-    tipCard.style.top = `${top + window.scrollY}px`;
-    tipCard.style.left = `${left + window.scrollX}px`;
+
+    // Clamp
+    x = Math.max(12, Math.min(x, vw - rect.width - 12));
+    y = Math.max(12, Math.min(y, vh - rect.height - 12));
+
+    TIP.el.style.transform = `translate(${x}px, ${y}px)`;
   }
 
   function openTipModal(key, triggerEl) {

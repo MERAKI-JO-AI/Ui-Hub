@@ -12,6 +12,7 @@
   --line: hsla(190,92%,56%,.65);
   --sidebar-width: 280px;
   --content-max-width: 75ch;
+  --header-height: 72px;
 }
 
 /* Reset & Base */
@@ -23,6 +24,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,6 +37,7 @@ body {
   background: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: var(--header-height);
 }
 
 /* Screen Reader Only */
@@ -50,25 +55,31 @@ body {
 
 /* Top Bar */
 .topbar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   z-index: 100;
   background: rgba(12, 16, 22, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .topbar-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+  padding-block: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -117,6 +128,7 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: calc(2rem + var(--header-height));
   gap: 3rem;
   position: relative;
   min-height: calc(100vh - 200px);
@@ -126,7 +138,7 @@ body {
 .sidebar-toc {
   position: -webkit-sticky;
   position: sticky;
-  top: 80px;
+  top: calc(var(--header-height) + 8px);
   align-self: flex-start;
   width: var(--sidebar-width);
   flex-shrink: 0;
@@ -176,7 +188,14 @@ body {
 /* Sections */
 .section {
   margin-bottom: 4rem;
-  scroll-margin-top: 100px;
+}
+
+/* Fix anchor scroll so content isn't hidden behind fixed header */
+section[id],
+[id].section,
+h2[id],
+[id] {
+  scroll-margin-top: var(--header-height);
 }
 
 .section-title {
@@ -837,32 +856,29 @@ body {
 }
 
 /* Modal */
-#tip-modal {
+#tip-modal,
+.tip-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
+  inset: 0;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] {
+#tip-modal[aria-hidden="false"],
+.tip-modal[aria-hidden="false"] {
   opacity: 1;
   pointer-events: all;
 }
 
 .modal-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
 }
@@ -874,17 +890,62 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   padding: 2.5rem;
-  max-width: 760px;
-  width: 92vw;
-  max-height: 90vh;
+  max-width: 640px;
+  width: min(100% - 32px, 640px);
+  max-height: calc(100vh - 40px);
   overflow-y: auto;
   box-shadow: var(--shadow);
   transform: scale(0.95);
   transition: transform 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] .modal-content {
+#tip-modal[aria-hidden="false"] .modal-content,
+.tip-modal[aria-hidden="false"] .modal-content {
   transform: scale(1);
+}
+
+/* Mobile modal tweaks */
+/* Mobile nav: center brand & links */
+@media (max-width: 600px) {
+  .topbar {
+    padding-inline: 16px;
+  }
+
+  .topbar-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    padding-inline: 16px;
+  }
+
+  .topbar .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #tip-modal,
+  .tip-modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 40px);
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-bottom: 16px;
+  }
 }
 
 .modal-close {
@@ -1014,6 +1075,7 @@ body {
 
   .layout-container {
     padding: 1rem;
+    padding-top: calc(1rem + var(--header-height));
   }
 
   .section-title {

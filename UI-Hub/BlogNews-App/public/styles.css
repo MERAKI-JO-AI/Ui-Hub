@@ -10,6 +10,7 @@
   --radius: 16px;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --line: hsla(350, 84%, 58%, .65);
+  --header-height: 72px;
 }
 
 /* Reset & Base */
@@ -21,6 +22,10 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +35,28 @@ body {
   color: var(--text);
   background: var(--bg);
   overflow-x: hidden;
+  padding-top: var(--header-height);
+}
+
+/* Fluid type & spacing */
+h1 {
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3.25rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+}
+
+p, li {
+  font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.05rem);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: inherit;
 }
 
 /* Screen Reader Only */
@@ -47,25 +74,28 @@ body {
 
 /* Container */
 .container {
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
 }
 
 /* Header */
 .site-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   z-index: 100;
   background: rgba(11, 15, 20, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .header-content {
@@ -110,6 +140,14 @@ body {
 /* Sections */
 .section {
   padding: 4rem 0;
+}
+
+/* Fix anchor scroll so content isn't hidden behind fixed header */
+section[id],
+[id].section,
+h2[id],
+[id] {
+  scroll-margin-top: var(--header-height);
 }
 
 /* Search Bar */
@@ -1048,25 +1086,39 @@ body {
   outline-offset: 4px;
 }
 
-/* Tip Card (Tooltip) */
-#tip-card {
-  position: absolute;
+/* TIP CARD — fixed to viewport so it doesn't drift on scroll */
+#tip-card,
+.tip-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-9999px, -9999px);
   z-index: 1000;
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease;
   max-width: 300px;
   background: #0e1524;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 0.75rem 0.9rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  pointer-events: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
 }
 
-#tip-card[aria-hidden="false"] {
+/* visible state */
+.tip-card.is-visible,
+#tip-card.is-visible {
   opacity: 1;
   visibility: visible;
+}
+
+/* (optional) reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .tip-card,
+  #tip-card {
+    transition: none;
+  }
 }
 
 .tip-title {
@@ -1103,32 +1155,29 @@ body {
 }
 
 /* Modal */
-#tip-modal {
+#tip-modal,
+.tip-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
+  inset: 0;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] {
+#tip-modal[aria-hidden="false"],
+.tip-modal[aria-hidden="false"] {
   opacity: 1;
   pointer-events: all;
 }
 
 .modal-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
 }
@@ -1140,17 +1189,75 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   padding: 2.5rem;
-  max-width: 760px;
-  width: 92vw;
-  max-height: 90vh;
+  max-width: 640px;
+  width: min(100% - 32px, 640px);
+  max-height: calc(100vh - 40px);
   overflow-y: auto;
   box-shadow: var(--shadow);
   transform: scale(0.95);
   transition: transform 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] .modal-content {
+#tip-modal[aria-hidden="false"] .modal-content,
+.tip-modal[aria-hidden="false"] .modal-content {
   transform: scale(1);
+}
+
+/* Mobile modal tweaks */
+/* Mobile nav: center brand & links */
+@media (max-width: 600px) {
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .header-content .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  #tip-modal,
+  .tip-modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 40px);
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-bottom: 16px;
+  }
 }
 
 .modal-close {

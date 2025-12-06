@@ -12,6 +12,7 @@
   --line: hsla(218,90%,62%,.65);
   --sidebar-width: 260px;
   --sidebar-collapsed-width: 80px;
+  --header-height: 72px;
 }
 
 /* Reset & Base */
@@ -23,6 +24,10 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,6 +43,35 @@ body {
   position: relative;
 }
 
+/* Fluid type & spacing */
+h1 {
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3.25rem);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+}
+
+/* Fix anchor scroll so content isn't hidden behind fixed header */
+section[id],
+[id].section,
+h2[id],
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+p, li {
+  font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.05rem);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: inherit;
+}
+
 /* Screen Reader Only */
 .sr-only {
   position: absolute;
@@ -51,7 +85,40 @@ body {
   border-width: 0;
 }
 
-/* Layout */
+/* Layout - Shell grid system */
+.dashboard-root {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.topbar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 16px;
+  padding-top: calc(16px + var(--header-height));
+  max-width: min(1100px, 100vw);
+  margin-inline: auto;
+}
+
 .main-content {
   position: fixed;
   top: 0;
@@ -70,9 +137,60 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.sidebar.collapsed ~ .main-content {
+.sidebar.collapsed ~ .main-content,
+.sidebar-collapsed ~ .main-content {
   left: var(--sidebar-collapsed-width);
   width: calc(100% - var(--sidebar-collapsed-width));
+}
+
+@media (max-width: 1024px) {
+  .shell {
+    grid-template-columns: 72px 1fr;
+  }
+  
+  .sidebar .label,
+  .sidebar-collapsed .sidebar .label {
+    display: none;
+  }
+  
+  .main-content {
+    left: 72px;
+    width: calc(100% - 72px);
+  }
+}
+
+@media (max-width: 820px) {
+  .shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+  
+  .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
+  }
+  
+  .topbar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .main {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 16px;
+    padding-top: calc(16px + var(--header-height));
+  }
+  
+  .topbar {
+    left: 0;
+  }
+  
+  .main-content {
+    left: 0;
+    width: 100%;
+  }
 }
 
 /* Sidebar */
@@ -92,8 +210,14 @@ body {
   box-sizing: border-box;
 }
 
-.sidebar.collapsed {
+.sidebar.collapsed,
+.sidebar-collapsed .sidebar {
   width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-collapsed .sidebar .label,
+.sidebar.collapsed .sidebar-item span {
+  display: none;
 }
 
 .sidebar-header {
@@ -189,18 +313,20 @@ body {
 
 /* Topbar */
 .topbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 90;
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: 100;
   background: rgba(11, 15, 20, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .topbar-left {
@@ -316,8 +442,20 @@ body {
 /* KPI Cards */
 .kpi-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1200px) {
+  .kpi-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .kpi-card {
@@ -430,6 +568,7 @@ body {
 
 .chart-area {
   width: 100%;
+  min-height: 260px;
   height: 300px;
   display: flex;
   align-items: center;
@@ -437,6 +576,13 @@ body {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1));
   border-radius: 8px;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .chart-area {
+    min-height: 200px;
+    height: 200px;
+  }
 }
 
 .chart-image {
@@ -470,9 +616,22 @@ body {
   color: var(--text);
 }
 
-.table-wrapper {
+.table-wrapper,
+.table-wrap {
   overflow-x: auto;
   overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 12px;
+  white-space: nowrap;
 }
 
 .data-table {
@@ -685,25 +844,39 @@ body {
   z-index: 1;
 }
 
-/* Tip Card (Tooltip) */
-#tip-card {
-  position: absolute;
+/* TIP CARD — fixed to viewport so it doesn't drift on scroll */
+#tip-card,
+.tip-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-9999px, -9999px);
   z-index: 1000;
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease;
   max-width: 300px;
   background: #0e1524;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 0.75rem 0.9rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  pointer-events: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
 }
 
-#tip-card[aria-hidden="false"] {
+/* visible state */
+.tip-card.is-visible,
+#tip-card.is-visible {
   opacity: 1;
   visibility: visible;
+}
+
+/* (optional) reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .tip-card,
+  #tip-card {
+    transition: none;
+  }
 }
 
 .tip-title {
@@ -740,32 +913,29 @@ body {
 }
 
 /* Modal */
-#tip-modal {
+#tip-modal,
+.tip-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
+  inset: 0;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] {
+#tip-modal[aria-hidden="false"],
+.tip-modal[aria-hidden="false"] {
   opacity: 1;
   pointer-events: all;
 }
 
 .modal-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
 }
@@ -777,17 +947,42 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   padding: 2.5rem;
-  max-width: 760px;
-  width: 92vw;
-  max-height: 90vh;
+  max-width: 640px;
+  width: min(100% - 32px, 640px);
+  max-height: calc(100vh - 40px);
   overflow-y: auto;
   box-shadow: var(--shadow);
   transform: scale(0.95);
   transition: transform 0.2s;
 }
 
-#tip-modal[aria-hidden="false"] .modal-content {
+#tip-modal[aria-hidden="false"] .modal-content,
+.tip-modal[aria-hidden="false"] .modal-content {
   transform: scale(1);
+}
+
+/* Mobile modal tweaks */
+@media (max-width: 600px) {
+  #tip-modal,
+  .tip-modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 40px);
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-bottom: 16px;
+  }
 }
 
 .modal-close {
@@ -880,8 +1075,8 @@ body {
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 20px;
+  right: 16px;
   width: 48px;
   height: 48px;
   background: var(--accent);
@@ -897,7 +1092,13 @@ body {
   visibility: hidden;
   transform: translateY(20px);
   transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-  z-index: 999;
+  z-index: 40;
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 28px;
+  }
 }
 
 .scroll-to-top[aria-hidden="false"] {
@@ -918,6 +1119,16 @@ body {
 .scroll-to-top svg {
   width: 20px;
   height: 20px;
+}
+
+/* Buttons / inputs (touch targets) */
+button, .button, input, select, textarea {
+  font: inherit;
+}
+
+.button {
+  min-height: 44px;
+  padding: 10px 16px;
 }
 
 /* Responsive */
@@ -942,10 +1153,6 @@ body {
 
   .dashboard-content {
     padding: 1rem;
-  }
-
-  .kpi-cards {
-    grid-template-columns: 1fr;
   }
 
   .topbar {
