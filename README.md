@@ -1,1 +1,1 @@
-### Live Demo Link: [https://vibecoding-ui.netlify.app/](https://ui-hub.netlify.app/)
+### Live Demo Link: [https://meraki-jo-ai.github.io/Ui-Hub/](https://meraki-jo-ai.github.io/Ui-Hub/)
