@@ -3,7 +3,7 @@ const projects = [
   {
     title: 'Portfolio',
     slug: 'Portfolio-App',
-    path: '../Portfolio-App/public/index.html',
+    path: 'Portfolio-App/public/index.html',
     tags: ['Personal', 'Branding'],
     blurb: 'Show your work with interactive teaching tips.',
     icon: '💼'
@@ -11,7 +11,7 @@ const projects = [
   {
     title: 'Landing Course',
     slug: 'LandingCourse-App',
-    path: '../LandingCourse-App/public/index.html',
+    path: 'LandingCourse-App/public/index.html',
     tags: ['Marketing', 'Course'],
     blurb: 'Sell a course with value props and trust cues.',
     icon: '📚'
@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'Product Showcase',
     slug: 'ProductShowcase-App',
-    path: '../ProductShowcase-App/public/index.html',
+    path: 'ProductShowcase-App/public/index.html',
     tags: ['E-commerce', 'Features'],
     blurb: 'Show product hero, gallery, specs, reviews.',
     icon: '🛍️'
@@ -27,7 +27,7 @@ const projects = [
   {
     title: 'Bootcamp Event',
     slug: 'Bootcamp-App',
-    path: '../Bootcamp-App/public/index.html',
+    path: 'Bootcamp-App/public/index.html',
     tags: ['Event', 'Workshop'],
     blurb: 'Agenda, speakers, venue, and registration.',
     icon: '🎓'
@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'Lead / Contact',
     slug: 'LeadContact-App',
-    path: '../LeadContact-App/public/index.html',
+    path: 'LeadContact-App/public/index.html',
     tags: ['Forms', 'CRM'],
     blurb: 'Conversion-focused contact/lead capture.',
     icon: '📧'
@@ -43,7 +43,7 @@ const projects = [
   {
     title: 'UI Kit',
     slug: 'UIKit-App',
-    path: '../UIKit-App/public/index.html',
+    path: 'UIKit-App/public/index.html',
     tags: ['Design System', 'Tokens'],
     blurb: 'Colors, type, buttons, inputs, cards, modals.',
     icon: '🎨'
@@ -51,7 +51,7 @@ const projects = [
   {
     title: 'Blog / News',
     slug: 'BlogNews-App',
-    path: '../BlogNews-App/public/index.html',
+    path: 'BlogNews-App/public/index.html',
     tags: ['Editorial', 'Content'],
     blurb: 'Editorial home + article with reading progress.',
     icon: '📝'
@@ -59,7 +59,7 @@ const projects = [
   {
     title: 'Link in Bio',
     slug: 'LinkInBio-App',
-    path: '../LinkInBio-App/public/index.html',
+    path: 'LinkInBio-App/public/index.html',
     tags: ['Campaign', 'Social'],
     blurb: 'Profile, highlight link, stack, social row.',
     icon: '🔗'
@@ -67,7 +67,7 @@ const projects = [
   {
     title: 'Dashboard Mock',
     slug: 'DashboardMock-App',
-    path: '../DashboardMock-App/public/index.html',
+    path: 'DashboardMock-App/public/index.html',
     tags: ['Data', 'Admin'],
     blurb: 'KPI cards, chart area, table with sort/paging.',
     icon: '📊'
@@ -75,7 +75,7 @@ const projects = [
   {
     title: 'Info Pages',
     slug: 'InfoMultiSection-App',
-    path: '../InfoMultiSection-App/public/index.html',
+    path: 'InfoMultiSection-App/public/index.html',
     tags: ['Docs', 'Multi-Section'],
     blurb: 'Docs-style page with TOC, tabs, code copy.',
     icon: '📖'
